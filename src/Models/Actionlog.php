@@ -9,6 +9,7 @@ use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use JulesGraus\Actionlogs\Contracts\Actionlog as ActionlogContract;
+use JulesGraus\Actionlogs\Tests\Artifacts\SampleUser;
 use JulesGraus\Utilities\Casts\JsTimeStamp;
 use RuntimeException;
 
@@ -27,7 +28,7 @@ class Actionlog extends Model implements ActionlogContract
     protected $fillable = ['action', 'payload'];
 
     public function user(): BelongsTo {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(SampleUser::class);
     }
 
     public function setPayloadAttribute(mixed $value) {

@@ -2,7 +2,7 @@
 
 namespace JulesGraus\Actionlogs\Tests\Artifacts;
 
-use App\Models\User;
+use Illuminate\Foundation\Auth\User;
 
 class SampleUser extends User
 {

@@ -8,6 +8,7 @@ use Closure;
 use Illuminate\Console\OutputStyle;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use JulesGraus\Actionlogs\Contracts\Actionlog as ActionlogContract;
 use JulesGraus\Housekeeper\Contracts\CanDoHouseKeeping;
 use function app;

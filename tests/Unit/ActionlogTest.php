@@ -2,14 +2,10 @@
 
 namespace JulesGraus\Actionlogs\Tests\Unit;
 
-use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Notifications\Action;
-use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Hash;
 use JulesGraus\Actionlogs\Actionlogs;
 use JulesGraus\Actionlogs\Models\Actionlog;
-use JulesGraus\Actionlogs\Services\ActionlogService;
 use JulesGraus\Actionlogs\Contracts\Actionlog as ActionlogContract;
 use JulesGraus\Actionlogs\Tests\Artifacts\SampleEvent;
 use JulesGraus\Actionlogs\Tests\Artifacts\SampleUser;
@@ -67,7 +63,7 @@ class ActionlogTest extends TestCase
         $email = 'a@sample.user';
 
         Actionlogs::listenToAndLog(SampleEvent::class, fn(SampleEvent $event) => $event->user->email.' tests actionlogging');
-        SampleEvent::dispatch(new User(['email' => $email]));
+        SampleEvent::dispatch(new SampleUser(['email' => $email]));
 
         $actionLogs = Actionlog::query()->get();
         $this->assertCount(1, $actionLogs);
