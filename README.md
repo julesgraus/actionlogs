@@ -4,7 +4,6 @@ You can install the package via composer:
 ```bash
 composer require julesgraus/actionlogs
 ```
-Make sure your root composer.json does contain a reference to the repository.
 
 ## Usage
 ### Direct logging
