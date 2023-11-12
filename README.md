@@ -1,4 +1,6 @@
 # Actionlogs
+Log any actions users do in your Laravel application.
+
 ## Installation
 You can install the package via composer:
 ```bash
